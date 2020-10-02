@@ -1,4 +1,3 @@
-
 export class NucleotideCounts {
 	static parse(dnaString) {
 		if (dnaString === '') return '0 0 0 0'
@@ -11,10 +10,8 @@ export class NucleotideCounts {
 
 		for(let i = 0; i <= 3; i++){
 			matches = dnaString.match(nucleotides[i]);
-			matches === null ? count += '0' : count += matches.length;
-			if (i !== 3) count += ' ';
+			matches === null ? count += '0 ' : count += `${matches.length} `;
 		}
-
-		return count	
+		return count.slice(0, -1);
 	}
 }
