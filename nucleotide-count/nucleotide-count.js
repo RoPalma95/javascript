@@ -1,8 +1,8 @@
-export class NucleotideCounts {
+class NucleotideCounts {
 	static parse(dnaString) {
 		if (dnaString === '') return '0 0 0 0'
 		
-		if (dnaString.match(/[BD-FH-SU-Z\d]/g)) throw new Error('Invalid nucleotide in strand')
+		if (dnaString.match(/[BD-FH-SU-Z\d]/gi)) throw new Error('Invalid nucleotide in strand')
 
 		let nucleotides = [/A/g, /C/g, /G/g, /T/g];
 		let count = ''
